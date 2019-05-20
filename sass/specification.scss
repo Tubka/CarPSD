@@ -2,10 +2,10 @@
   position: relative;
   color: #fff;
   background-color: #000;
-  min-height: 360px;
+  min-height: 460px;
   background-image: url("img/specification/specification-car.png");
   background-repeat: no-repeat;
-  background-position: 46% 120px;
+  background-position: 46% 220px;
 
   &__content {
     display: flex;
@@ -16,6 +16,7 @@
   }
 
   &__header {
+    margin: 150px 0 34px;
     font-size: 4.06rem;
     font-weight: 100;
     line-height: 1;
@@ -30,6 +31,7 @@
   }
 
   &__description {
+    margin-top: 0;
     font-size: 1.3125rem;
   }
 
@@ -62,8 +64,8 @@
       content: "04";
       display: block;
       position: absolute;
-      top: -24px;
-      left: -24px;
+      top: -30px;
+      left: -30px;
       opacity: 0.1;
     }
   }
@@ -137,7 +139,7 @@
 }
 
 .wheels {
-  padding: 110px 0 140px 0;
+  padding: 110px 0 144px 0;
 
   &__container {
     width: 570px;

@@ -1,0 +1,134 @@
+.call {
+  position: relative;
+  color: #fff;
+  background-color: #000;
+  min-height: 460px;
+  background-image: url("img/gallery/header-galery-car.png");
+  background-repeat: no-repeat;
+  background-position: 100% 0;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 0px;
+  }
+
+  &__header {
+    margin: 148px 0 32px;
+    // padding-top: 100px;
+    font-size: 4.06rem;
+    font-weight: 100;
+    line-height: 1;
+
+    &--bold {
+      margin-top: 4px;
+      content: "";
+      display: block;
+      white-space: pre;
+      font-weight: 400;
+      line-height: 1;
+    }
+  }
+
+  &__description {
+    font-size: 1.3125rem;
+  }
+
+  &__link {
+    color: #ea0d60;
+  }
+}
+
+.form {
+  padding: 140px 0 141px;
+
+  &__container {
+    width: 570px;
+    margin: 0 auto;
+  }
+
+  &__header {
+    margin: 0;
+    display: inline-block;
+    position: relative;
+    font-weight: 400;
+    font-size: 4.06rem;
+    line-height: 1;
+
+    &::before {
+      content: "08";
+      display: block;
+      position: absolute;
+      top: -27px;
+      left: -27px;
+      opacity: 0.1;
+    }
+  }
+
+  &__underline {
+    color: #ea0d60;
+  }
+
+  &__description {
+    padding-top: 38px;
+    font-size: 1.3125rem;
+    line-height: 1.7;
+  }
+
+  &__form {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__input {
+    margin-top: 50px;
+    padding-bottom: 5px;
+    font-size: 1.3125rem;
+    border: none;
+    border-bottom: 1px solid #888888;
+    outline: none;
+
+    &::placeholder {
+      color: #cbcbcb;
+      font-style: italic;
+      font-weight: 100;
+    }
+
+    &--name {
+      margin-bottom: 10px;
+      width: 46%;
+    }
+    &--email {
+      margin-bottom: 10px;
+      width: 46%;
+    }
+
+    &--phone {
+      margin-bottom: 10px;
+      width: 100%;
+    }
+
+    &--message {
+      width: 100%;
+      min-height: 130px;
+    }
+  }
+
+  &__btn {
+    margin-top: 28px;
+    margin-right: -10px;
+    border: none;
+    margin-left: auto;
+    font-weight: 400;
+    font-size: 0.75rem;
+    padding: 18px 36px;
+    color: #fff;
+    background-color: #ea0c60;
+    border-radius: 40px;
+    letter-spacing: 1px;
+  }
+}

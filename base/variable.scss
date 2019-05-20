@@ -1,7 +1,21 @@
+$large-width: 1700px;
+$medium-width: 1400px;
+
 @mixin imgProperty {
   position: absolute;
   width: 180px;
   height: 180px;
   border-radius: 50%;
   overflow: hidden;
+}
+
+@mixin large {
+  @media (max-width: #{$large-width}) {
+    @content;
+  }
+}
+@mixin medium {
+  @media (max-width: #{$medium-width}) {
+    @content;
+  }
 }
