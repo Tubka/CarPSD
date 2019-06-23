@@ -9,7 +9,11 @@
 
 :root {
   @include large {
-    font-size: 1rem;
+    font-size: 0.9rem;
+  }
+
+  @include small {
+    font-size: 0.7rem;
   }
 }
 
@@ -22,7 +26,6 @@ body {
   }
 
   .nav {
-    // height: 100px;
     position: absolute;
     width: 100%;
     top: 0;
@@ -56,6 +59,11 @@ body {
       border: none;
       background-color: transparent;
 
+      // @include small {
+      //   width: 25px;
+      //   height: 18px;
+      // }
+
       &:hover {
         cursor: pointer;
 
@@ -67,9 +75,13 @@ body {
 
     &__line {
       position: absolute;
-      height: 5px;
+      height: 4px;
       background-color: #fff;
-      border-radius: 5px;
+      border-radius: 4px;
+
+      // @include small {
+      //   height: 3px;
+      // }
 
       &--top {
         width: 100%;
@@ -97,6 +109,15 @@ body {
   }
 
   .navigation {
+    padding: 0;
+
+    @include small {
+      position: absolute;
+      left: 50%;
+      top: 80px;
+      transform: translateX(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+    }
     &__list {
       display: flex;
     }
@@ -125,6 +146,11 @@ body {
     background-color: #000;
     min-height: 900px;
     // text-align: center;
+    overflow-x: hidden;
+
+    @include submedium {
+      min-height: 600px;
+    }
 
     &__slider {
       position: absolute;
@@ -207,6 +233,9 @@ body {
       font-weight: 100;
       line-height: 0.8;
 
+      @include submedium {
+        font-size: 4.5rem;
+      }
       &--bold {
         content: "";
         display: block;
@@ -217,27 +246,45 @@ body {
     }
 
     &__btn {
-      font-size: 0.75rem;
+      // font-size: 0.75rem;
+      font-size: 12px;
       padding: 18px 49px;
       color: #fff;
       background-color: #ea0c60;
       border-radius: 40px;
+
+      @include small {
+        font-size: 11px;
+      }
     }
   }
 
   .overview {
-    padding: 135px 0 330px;
+    padding: 135px 35px 330px 35px;
     background-image: url("img/overview1.png"), url("img/overview2.png");
     background-repeat: no-repeat no-repeat;
     background-position: 112% 147%, 0 104%;
 
     @include large {
       background-size: 60%, 42%;
-      background-position: 112% 127%, 0 104%;
+      background-position: 132% 127%, 0 104%;
     }
 
     @include medium {
-      background-position-y: 100%;
+      background-size: 70%, 42%;
+      background-position: 172% 137%, 0 104%;
+    }
+
+    @include submedium {
+      background-size: 80%, 42%;
+      background-position: 202% 117%, 0 104%;
+    }
+
+    @include small {
+      padding-bottom: 150px;
+      background-image: url("img/overview2.png");
+      background-position: 0 104%;
+      background-size: 72%;
     }
 
     &__container {
@@ -316,11 +363,18 @@ body {
 
   .details {
     // text-align: center;
-    padding-top: 138px;
+    // padding-top: 138px;
+    padding: 138px 35px 0 35px;
     overflow: hidden;
 
+    &__display {
+      @include submedium {
+        display: none;
+      }
+    }
+
     &__container {
-      max-width: 570px;
+      max-width: 580px;
       margin: 0 auto;
     }
 
@@ -366,11 +420,25 @@ body {
       text-align: center;
       letter-spacing: 3px;
       opacity: 0.2;
+
+      @include submedium {
+        font-size: 6rem;
+        // margin-left: 0;
+      }
+      @include subsmall {
+        font-size: 5rem;
+      }
     }
 
     &__carFront {
       margin-top: -35px;
       margin-left: 26px;
+
+      @include small {
+        margin-top: -20px;
+        margin-left: 15px;
+        width: 100%;
+      }
     }
 
     &__bar1 {
@@ -460,11 +528,21 @@ body {
       text-align: center;
       letter-spacing: 3px;
       opacity: 0.2;
+
+      @include subsmall {
+        margin-left: 5px;
+        font-size: 5rem;
+      }
     }
 
     &__backCar {
       margin-top: -41px;
       margin-left: 17px;
+
+      @include small {
+        margin-top: -20px;
+        width: 100%;
+      }
     }
 
     &__back1 {
@@ -521,15 +599,14 @@ body {
     background-repeat: no-repeat;
     background-position: 100% 88px, 0 100%;
     margin-top: 100px;
-    padding-top: 132px;
-    padding-bottom: 220px;
+    padding: 132px 35px 220px 35px;
 
     &__container {
       display: flex;
       justify-content: center;
       flex-direction: column;
       align-items: center;
-      width: 570px;
+      max-width: 570px;
       margin: 0 auto;
     }
 
@@ -607,24 +684,46 @@ body {
     border-top: 1px solid #1a1a1a;
 
     &__container {
+      display: flex;
       margin: 0 auto;
       max-width: 1170px;
       color: #fff;
-      display: flex;
       flex-wrap: wrap;
+
+      @include submedium {
+        // font-size: 1.2em;
+
+        justify-content: center;
+      }
+
+      @include small {
+        font-size: 1.4em;
+        flex-direction: column;
+        align-items: center;
+      }
     }
 
     &__section {
       width: 25%;
 
-      // @include large {
-      //   width: 50%;
-      // }
+      @include submedium {
+        justify-content: center;
+        width: 35%;
+      }
+
+      @include small {
+        width: 80%;
+        margin-bottom: 40px;
+      }
     }
 
     &__title {
       font-weight: 400;
       font-size: 1.93rem;
+
+      @include small {
+        font-size: 1.6em;
+      }
     }
 
     &__li {
