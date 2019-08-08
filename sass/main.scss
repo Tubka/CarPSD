@@ -13,7 +13,7 @@
   }
 
   @include small {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
 }
 
@@ -127,6 +127,7 @@ body {
     }
 
     &__link {
+      font-size: 1em;
       padding: 2px;
       color: #fff;
 

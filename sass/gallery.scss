@@ -1,3 +1,5 @@
+@import "base/variable.scss";
+
 .gallery {
   position: relative;
   color: #fff;
@@ -43,17 +45,22 @@
   padding: 140px 0 95px;
 
   &__container {
-    width: 570px;
+    max-width: 570px;
     margin: 0 auto;
   }
 
   &__header {
     margin: 0;
+    padding: 0;
     display: inline-block;
     position: relative;
     font-weight: 400;
     font-size: 4.06rem;
     line-height: 1;
+
+    @include small {
+      margin: 0 30px;
+    }
 
     &::before {
       content: "07";
@@ -70,7 +77,7 @@
   }
 
   &__description {
-    padding-top: 38px;
+    padding: 38px 10px 0;
     font-size: 1.3125rem;
     line-height: 1.7;
   }
@@ -81,6 +88,7 @@
     margin-top: 60px;
     display: flex;
     justify-content: center;
+    display: none;
   }
 
   &__link {
@@ -96,11 +104,20 @@
   }
   //gallery
   &__images {
-    width: 1200px;
-    // padding: 0 20px;
+    max-width: 1200px;
+    padding: 0 20px;
     display: flex;
     margin: 0 auto;
     // justify-content: center;
+
+    @include medium {
+      flex-direction: column;
+      align-items: center
+    }
+
+    @include small {
+      width: 100%;
+    }
   }
 
   &__fotos-container {
@@ -109,6 +126,13 @@
     height: 600px;
     display: flex;
     flex-wrap: wrap;
+    @include small {
+      width: 100%;
+      height: auto;
+      flex-wrap: nowrap;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__fotos {
@@ -118,6 +142,12 @@
     overflow: hidden;
     z-index: 0;
     background-color: #fff;
+    @include small {
+      width: 80%;
+      height: 340px;
+      box-shadow: 1px 0px 5px #d0d0d0;
+
+    }
 
     &--effects {
       box-shadow: 1px 0px 15px #d0d0d0;
@@ -134,27 +164,57 @@
   &__video {
     width: 600px;
     overflow: hidden;
+
+    @include small {
+      width: 100%;
+    }
+
+    &--video {
+      @include small {
+        width: 600px;    
+      }
+    }
   }
 
   &__img {
     min-width: 100%;
-    min-height: 100%;
-    top: 0%;
-    left: 0%;
+    // min-height: 100%;
+    top: 0;
+    // bottom: 0;
+    left: 0;
     position: absolute;
     transform: scale(1);
 
+    @include small {
+      top: auto;
+      left: auto;
+      right: -40px;
+    }
     &--first {
       left: -340px;
+
+      @include small {
+        bottom: 0;
+        left: auto;
+        right: -40px;
+      }
     }
 
     &--third {
       top: -20px;
       left: -250px;
+      @include small {
+        bottom: 0;
+        left: auto;
+      }
     }
 
     &--fourth {
       left: -0px;
+      @include small {
+        bottom: 0;
+        left: auto;
+      }
     }
   }
 }
